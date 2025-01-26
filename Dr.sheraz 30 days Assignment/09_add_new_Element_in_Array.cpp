@@ -1,30 +1,29 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 int main()
 {
     int arr[100];
     int n;
-    cout << "Enter the number of elements in array: ";
-    cin >> n; // n = 3;
-    //------------------------
+    printf("Enter the number of elements in array: ");
+    scanf("%d", &n);
+
     for (int i = 0; i < n; i++)
     {
-        cout << "Enter the element " << i + 1 << ": ";
-        cin >> arr[i];
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
     }
+
     int insert;
-    cout << "Enter the elements of insert new value in array: ";
-    cin >> insert;
+    printf("Enter the new value to insert into the array: ");
+    scanf("%d", &insert);
+
     arr[n] = insert;
-    //----------------------------------------------
-    n++; // n = no of element in array n = 4;
+    n++;
+
     for (int i = n - 1; i > 0; i--)
     {
-
         for (int j = 0; j < i; j++)
         {
-
-            if (arr[j] > arr[j + 1])
+            if (arr[j] < arr[j + 1])
             {
                 int temp = arr[j];
                 arr[j] = arr[j + 1];
@@ -35,8 +34,8 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        cout << i << " Element in array : ";
-        cout << arr[i] << endl;
+        printf("%d Element in array: %d\n", i, arr[i]);
     }
+
     return 0;
 }
